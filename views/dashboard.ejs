@@ -1,0 +1,104 @@
+<%- include('partials/header') %>
+
+    <div class="row g-4 mb-4">
+        <!-- Total Products -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 stats-card border-primary">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="text-muted mb-2">Total Products</h6>
+                            <h3 class="fw-bold mb-0" id="total-products">-</h3>
+                        </div>
+                        <div class="fs-1 text-primary opacity-25">
+                            <i class="bi bi-box-seam"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Today's Sales -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 stats-card border-success" style="border-left-color: var(--success-color);">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="text-muted mb-2">Today's Sales</h6>
+                            <h3 class="fw-bold mb-0 text-success" id="today-sales">-</h3>
+                        </div>
+                        <div class="fs-1 text-success opacity-25">
+                            <i class="bi bi-currency-rupee"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Today's Transactions -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 stats-card border-info" style="border-left-color: #0dcaf0;">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="text-muted mb-2">Transactions</h6>
+                            <h3 class="fw-bold mb-0" id="today-transactions">-</h3>
+                        </div>
+                        <div class="fs-1 text-info opacity-25">
+                            <i class="bi bi-receipt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Low Stock -->
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card h-100 stats-card border-warning" style="border-left-color: #ffc107;">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="text-muted mb-2">Low Stock</h6>
+                            <h3 class="fw-bold mb-0 text-warning" id="low-stock-count">-</h3>
+                        </div>
+                        <div class="fs-1 text-warning opacity-25">
+                            <i class="bi bi-exclamation-triangle"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Low Stock Section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <h5 class="mb-0 fw-bold text-danger">Low Stock Alert (< 5 items)</h5>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0 align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Product Name</th>
+                                    <th>Current Stock</th>
+                                    <th>Price</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="low-stock-list">
+                                <tr>
+                                    <td colspan="4" class="text-center py-4 text-muted">Loading data...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dashboard.js"></script>
+    <%- include('partials/footer') %>

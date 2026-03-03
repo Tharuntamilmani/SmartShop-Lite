@@ -1,0 +1,106 @@
+<%- include('partials/header') %>
+
+    <div class="row h-100">
+        <!-- Product Grid Section -->
+        <div class="col-md-7 col-lg-8 mb-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-header bg-white py-3">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0 fw-bold">Select Products</h5>
+                        <div class="input-group w-50">
+                            <span class="input-group-text bg-light border-end-0">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control border-start-0 bg-light" id="product-search"
+                                placeholder="Search items...">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body bg-light">
+                    <div class="row g-3" id="product-grid">
+                        <!-- Products will be injected here -->
+                        <div class="col-12 text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart / Billing Section -->
+        <div class="col-md-5 col-lg-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-header bg-primary text-white py-3">
+                    <h5 class="mb-0 fw-bold"><i class="bi bi-cart3 me-2"></i>Current Bill</h5>
+                </div>
+                <div class="card-body d-flex flex-column p-0">
+                    <!-- Cart Items List -->
+                    <div class="flex-grow-1 overflow-auto p-3" style="max-height: 400px; min-height: 300px;">
+                        <div id="cart-items" class="d-flex flex-column gap-2">
+                            <!-- Cart Items injected here -->
+                            <div class="text-center text-muted py-5 mt-5">
+                                <i class="bi bi-basket display-4 opacity-25"></i>
+                                <p class="mt-2">Cart is empty</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Billing Summary -->
+                    <div class="border-top p-3 bg-light">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span class="text-muted">Subtotal</span>
+                            <span class="fw-bold" id="cart-total">₹0.00</span>
+                        </div>
+
+                        <hr>
+
+                        <!-- Customer Details Form -->
+                        <form id="billing-form">
+                            <div class="mb-3">
+                                <label class="form-label small text-muted text-uppercase fw-bold">Payment Method</label>
+                                <select class="form-select" id="payment-method">
+                                    <option value="Cash" selected>Cash</option>
+                                    <option value="UPI">UPI / Online</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label small text-muted text-uppercase fw-bold">Customer Mobile
+                                    (Optional)</label>
+                                <input type="tel" class="form-control" id="customer-phone" placeholder="9876543210"
+                                    pattern="[0-9]{10}">
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success py-2 fs-5 fw-bold" id="checkout-btn"
+                                    disabled>
+                                    Generate Bill
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="billSuccessModal" tabindex="-1" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-4">
+                <div class="modal-body">
+                    <div class="mb-3 text-success">
+                        <i class="bi bi-check-circle-fill display-1"></i>
+                    </div>
+                    <h3 class="fw-bold mb-3">Bill Generated!</h3>
+                    <p class="text-muted mb-4">Transaction recorded successfully.</p>
+                    <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">Start New Bill</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/billing.js"></script>
+    <%- include('partials/footer') %>

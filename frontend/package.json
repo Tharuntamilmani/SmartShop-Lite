@@ -1,0 +1,37 @@
+{
+    "name": "ecocart-frontend",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@radix-ui/react-dialog": "^1.1.15",
+        "@radix-ui/react-dropdown-menu": "^2.1.16",
+        "@radix-ui/react-toast": "^1.2.15",
+        "axios": "^1.13.5",
+        "clsx": "^2.1.1",
+        "date-fns": "^4.1.0",
+        "framer-motion": "^11.18.2",
+        "lucide-react": "^0.330.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-hot-toast": "^2.4.1",
+        "react-router-dom": "^6.30.3",
+        "recharts": "^2.15.4",
+        "tailwind-merge": "^2.6.1"
+    },
+    "devDependencies": {
+        "@types/react": "^18.2.55",
+        "@types/react-dom": "^18.2.19",
+        "@vitejs/plugin-react": "^4.2.1",
+        "autoprefixer": "^10.4.24",
+        "postcss": "^8.5.6",
+        "tailwindcss": "^3.4.19",
+        "vite": "^5.1.0"
+    }
+}
